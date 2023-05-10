@@ -7,29 +7,29 @@ on:
 
 jobs:
   build-and-deploy:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Install Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+       with:
+         node-version: '18'
 
-    - name: Install dependences
-      run: npm ci
+     - name: Install dependences
+       run: npm ci
     
-    - name: Build project
-      run: npm run build
+     - name: Build project
+       run: npm run build
 
-    # - name: Generate 404.html
-    #   run: 
-    #     repo_name=$(git rev-parse --show-toplevel | xargs basename)
-    #     echo "<!DOCTYPE html><html lang="es"><head><meta http-equiv='refresh' content='o; url=https://danmorjac.github
+     # - name: Generate 404.html
+     #   run: 
+     #     repo_name=$(git rev-parse --show-toplevel | xargs basename)
+     #     echo "<!DOCTYPE html><html lang="es"><head><meta http-equiv='refresh' content='o; url=https://danmorjac.github
 
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@3.7.1
-      with:
-        branch: gh-pages
-        folder: dist
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+         branch: gh-pages
+         folder: dist
