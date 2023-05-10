@@ -14,14 +14,14 @@ jobs:
 
       - name: Install Node.js
         uses: actions/setup-node@v3
-       with:
+        with:
          node-version: '18'
 
-     - name: Install dependences
-       run: npm ci
+      - name: Install dependences
+        run: npm ci
     
-     - name: Build project
-       run: npm run build
+      - name: Build project
+         run: npm run build
 
      # - name: Generate 404.html
      #   run: 
